@@ -1,0 +1,372 @@
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from require at /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from require at /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from require at /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/ubuntu/workspace/app/models/application_record.rb:2)
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20181107130652)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181107130652"]]
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2018-11-07 13:07:03 UTC], ["updated_at", 2018-11-07 13:07:03 UTC]]
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/ubuntu/workspace/app/models/application_record.rb:2)
+Started GET "/" for 117.16.6.118 at 2018-11-07 13:10:41 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (4.3ms)
+Completed 200 OK in 25ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 117.16.6.118 at 2018-11-07 13:12:49 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/railties-5.0.0/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 117.16.6.118 at 2018-11-07 13:14:42 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
+/usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [24 times] (8.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.9ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.7ms)
+Started GET "/" for 117.16.6.118 at 2018-11-07 13:15:35 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.7ms)
+Started GET "/" for 117.16.6.118 at 2018-11-07 13:15:45 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 914ms (Views: 912.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 117.16.6.118 at 2018-11-07 13:15:46 +0000
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 117.16.6.118 at 2018-11-07 13:15:46 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 117.16.6.118 at 2018-11-07 13:15:46 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 117.16.6.118 at 2018-11-07 13:15:47 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 117.16.6.118 at 2018-11-07 13:15:47 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 117.16.6.118 at 2018-11-07 13:15:47 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 117.16.6.118 at 2018-11-07 13:15:47 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/ubuntu/workspace/app/models/application_record.rb:2)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/ubuntu/workspace/app/models/application_record.rb:2)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/ubuntu/workspace/app/models/application_record.rb:2)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/ubuntu/workspace/app/models/application_record.rb:2)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/ubuntu/workspace/app/models/application_record.rb:2)
+Started GET "/users/sign_up" for 117.16.6.118 at 2018-11-07 13:25:54 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 107ms (Views: 77.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/db" for 117.16.6.118 at 2018-11-07 13:26:18 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/db"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
+/usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [24 times] (12.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (51.0ms)
+Started GET "/railsdb" for 117.16.6.118 at 2018-11-07 13:26:24 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/railsdb"):
+  
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+rack (2.0.6) lib/rack/handler/webrick.rb:86:in `service'
+/usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb [24 times] (6.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.2ms)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/ubuntu/workspace/app/models/application_record.rb:2)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/ubuntu/workspace/app/models/application_record.rb:2)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/ubuntu/workspace/app/models/application_record.rb:2)
+Started GET "/rails/db" for 117.16.6.118 at 2018-11-07 13:30:10 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RailsDb::DashboardController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/dashboard/index.html.erb within layouts/rails_db/application
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/dashboard/index.html.erb within layouts/rails_db/application (786.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_header.html.erb (4.9ms)
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from tables at /usr/local/rvm/gems/ruby-2.3.4/gems/activerecord-5.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:250)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_sidebar.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_gems.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_footer.html.erb (4.6ms)
+Completed 200 OK in 966ms (Views: 953.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/rails_db/foundation_and_overrides.self-3ccd736cd08a959a4135aca3c292b61c4263dacb5fd257c834c31948ac0c25af.css?body=1" for 117.16.6.118 at 2018-11-07 13:30:11 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/codemirror.self-6a14f4765e5eb8280c11af3cbce58685d2604c895fd3ce66592454f751edb002.css?body=1" for 117.16.6.118 at 2018-11-07 13:30:11 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/app.self-b331ca9582b79bd9a25264b637023ad691d5931d04d9092d2cec11be6144dfbe.css?body=1" for 117.16.6.118 at 2018-11-07 13:30:11 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/pagination.self-867fc87d1ee39b7eda707fd25bb2e714f9baa2066b82755d3cec931d631158f0.css?body=1" for 117.16.6.118 at 2018-11-07 13:30:11 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/table.self-014b469574a6ad9479d2cc6bb1e8075ec00a27d7527c6aef59a2870ef8d55065.css?body=1" for 117.16.6.118 at 2018-11-07 13:30:11 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/forms.self-834ca1245cba2d14f46c665e2b8e8fdfd3c47074aad19a29397ad3b27888bfda.css?body=1" for 117.16.6.118 at 2018-11-07 13:30:11 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/foundation.min.self-35376cedab550837a894b5336dc978e65c7880960efa135709a5f5c02d874077.css?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/search.self-c6c9c68c2d631a53e8ac3de118d1982a67047ae68c829fb4c4bec025c27bdbb6.css?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/application.self-cda66a0458c81c95421b4ab1ee6d3677515cb88281771f4fcf49a3b797242381.css?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/codemirror/themes/pastel-on-dark.self-3bc2071874ad126a3e5ecc5ece5ae77151c1dc358e77c483863ef2c323c0f8cb.css?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/codemirror/addons/hint/show-hint.self-5139c4701e80b3eefc9588f1a124ba6784b5a556ae73ea6c3b83f498e2893e12.css?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/sidebar.self-d3f51ad8fa16ad94b2afbb5d6a7694bda3ca1c24f66d49d9149bb79d5f81a342.css?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/jquery.self-531d4cb884ed45ea19381d13707d3eb4ba477ceac524282cb603ffcc6e968b3f.js?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/jquery.cookie.self-4d5cd589b27840dd1b295c58c942f063418200fb1ace98b75af7f8fe7510b1c4.js?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/rails-ujs.self-95f602627c72029ef2161871d586b93da2529f9020d3a8a62ff184732c88ebbf.js?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/foundation.min.self-57f8cdb550b449186f2342f00dcd6859db87afd5c60340fa73aaba5b9666a565.js?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/show_hide_columns.self-ed04f36ffccb5272a74100e4ca750191641c530c3fabf6b5565af075e08cc23c.js?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/sticky.self-5ca38640b18fe8975e088b1ee592652571991a97f40d8ac0e127320f7593bd19.js?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/search.self-77a0ff826fe4b19b86c2766c9dc1f58936d08266d19b623aadb92d0b729ad0b3.js?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/codemirror.self-ce134e372d984fe4e9e1548e3442b5f4caf908f610337dd20f97392a8bce3551.js?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/codemirror/modes/sql.self-d9855b9d7ac2cf16a9fa675981787e13a6b70c50f8bb179a3224d484c8f45072.js?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/codemirror/addons/hint/show-hint.self-b92af6c2a5eb1e8653ab3fe78da7d7c5737af1e2d83771a316bf0368cc2a268a.js?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/codemirror/addons/hint/sql-hint.self-d7040867fda791b0eeab95b31428288e97572ae92ab80ccd9022839672228967.js?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/application.self-c62d31091f60357d37422398400b64079b7003d006927fb5fd95d615bc5f88a7.js?body=1" for 117.16.6.118 at 2018-11-07 13:30:12 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/logo_mini-a0c1f83613bce7afc7554ddec7cc4627b1682b802fc6fe0b56c755c9536ad869.png" for 117.16.6.118 at 2018-11-07 13:30:13 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/logo-59fa16b8a4541ba856b0be60e8d9e935ea790c7d43ad29181ff8cd5794461428.png" for 117.16.6.118 at 2018-11-07 13:30:13 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/rails/db/data-table" for 117.16.6.118 at 2018-11-07 13:30:19 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::DashboardController#data_table as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/dashboard/data_table.html.erb within layouts/rails_db/application
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/dashboard/data_table.html.erb within layouts/rails_db/application (6.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_header.html.erb (9.0ms)
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from tables at /usr/local/rvm/gems/ruby-2.3.4/gems/activerecord-5.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:250)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_sidebar.html.erb (4.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_gems.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_footer.html.erb (11.6ms)
+Completed 200 OK in 172ms (Views: 168.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/rails_db/data_table-1771e659e939d3ce2f6f68004e6a0e4093c804f40cfbe58de76521b3a1c93675.png" for 117.16.6.118 at 2018-11-07 13:30:20 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/assets/rails_db/data_table_code-87a82fa6e93c5c0838649d2e07d024ff2f3c8797fcae1241b4e86b447ca6b9d2.png" for 117.16.6.118 at 2018-11-07 13:30:20 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/rails/db/sql" for 117.16.6.118 at 2018-11-07 13:30:29 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::SqlController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/sql/index.html.erb within layouts/rails_db/application
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_exp_col.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/sql/_history.html.erb (0.9ms)
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from tables at /usr/local/rvm/gems/ruby-2.3.4/gems/activerecord-5.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:250)
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from tables at /usr/local/rvm/gems/ruby-2.3.4/gems/activerecord-5.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:250)
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from tables at /usr/local/rvm/gems/ruby-2.3.4/gems/activerecord-5.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:250)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/sql/index.html.erb within layouts/rails_db/application (12.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_header.html.erb (2.5ms)
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from tables at /usr/local/rvm/gems/ruby-2.3.4/gems/activerecord-5.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:250)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_sidebar.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_gems.html.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_footer.html.erb (3.1ms)
+Completed 200 OK in 90ms (Views: 85.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/rails/db/import" for 117.16.6.118 at 2018-11-07 13:30:32 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::SqlController#import as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/sql/import.html.erb within layouts/rails_db/application
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/sql/_import_sample.html.erb (0.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/sql/import.html.erb within layouts/rails_db/application (3.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_header.html.erb (2.5ms)
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from tables at /usr/local/rvm/gems/ruby-2.3.4/gems/activerecord-5.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:250)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_sidebar.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_gems.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_footer.html.erb (3.7ms)
+Completed 200 OK in 69ms (Views: 66.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/db/" for 117.16.6.118 at 2018-11-07 13:30:34 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::DashboardController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/dashboard/index.html.erb within layouts/rails_db/application
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/dashboard/index.html.erb within layouts/rails_db/application (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_header.html.erb (3.1ms)
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from tables at /usr/local/rvm/gems/ruby-2.3.4/gems/activerecord-5.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:250)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_sidebar.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_gems.html.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_footer.html.erb (3.6ms)
+Completed 200 OK in 67ms (Views: 64.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/db/tables/users/data" for 117.16.6.118 at 2018-11-07 13:30:40 +0000
+Cannot render console from 117.16.6.118! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"users"}
+DEPRECATION WARNING: #tables currently returns both tables and views. This behavior is deprecated and will be changed with Rails 5.1 to only return tables. Use #data_sources instead. (called from tables at /usr/local/rvm/gems/ruby-2.3.4/gems/activerecord-5.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:250)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/tables/data.js.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/shared/_exp_col.html.erb (10.0ms)
+DEPRECATION WARNING: Method to_hash is deprecated and will be removed in Rails 5.1, as `ActionController::Parameters` no longer inherits from hash. Using this deprecated behavior exposes potential security problems. If you continue to use this method you may be creating a security vulnerability in your app that can be exploited. Instead, consider using one of these documented methods which are not deprecated: http://api.rubyonrails.org/v5.0.0/classes/ActionController/Parameters.html (called from method_missing at /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-5.0.0/lib/action_controller/metal/strong_parameters.rb:618)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/tables/_condition_fields.html.erb (40.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/tables/_condition_fields.html.erb (10.6ms)
+  [1m[36m Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/tables/_sql.html.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/tables/_data.html.erb (99.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-2.0.4/app/views/rails_db/tables/data.js.erb (103.5ms)
+Completed 200 OK in 142ms (Views: 110.3ms | ActiveRecord: 1.6ms)
+
+
