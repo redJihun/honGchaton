@@ -2,11 +2,11 @@
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="index.html">Lalapeden</a></h1>
+      <h1><a href="/">Lalapeden</a></h1>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
-        <li class="active"><a href="index.html">Home</a></li>
+        <li class="active"><a href="/">Home</a></li>
         <li><a class="drop" href="#">Pages</a>
           <ul>
             <li><a href="pages/gallery.html">Gallery</a></li>
@@ -29,8 +29,17 @@
             <li><a href="#">Level 2</a></li>
           </ul>
         </li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
+        <%if user_signed_in?%>
+          <li><a href="#"><%=current_user.email%>님</a></li>
+        <%else%>
+          <li><a href="#">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></li>
+        <%end%>
+          
+        <%if user_signed_in?%>
+          <%= link_to 'Log Out', destroy_user_session_path, :method => :delete %>
+        <%else%>
+          <%= link_to 'Log In', new_user_session_path %>
+        <%end%>
       </ul>
     </nav>
     <!-- ################################################################################################ -->
