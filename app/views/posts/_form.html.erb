@@ -16,12 +16,8 @@
     <%= f.text_field :title %>
   </div>
 
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_field :content %>
-  </div>
-
-
+  <%= tinymce :language => "en" %>
+  <%= f.text_area :content, id: :post_content, class: "form-control tinymce", rows: "10" %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <div class="actions">
