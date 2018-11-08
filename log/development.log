@@ -3627,3 +3627,160 @@ Processing by RegistrationsController#new as HTML
 Completed 200 OK in 692ms (Views: 690.5ms | ActiveRecord: 0.0ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFarms (20181108125739)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "farms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "farm_type" varchar, "admin" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_farms_on_user_id" ON "farms" ("user_id")[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181108125739"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_farms_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_farms_on_user_id' AND type='index'
+[0m
+  [1m[35m (2.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+[0m
+  [1m[35m (2.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (2.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/users/sign_up" for 10.0.2.2 at 2018-11-08 21:59:24 +0900
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (295.8ms)
+Completed 500 Internal Server Error in 10307ms (ActiveRecord: 12.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'tinymce' with type 'application/javascript'
+Checked in these paths: 
+  /vagrant/hongkaton/app/assets/config
+  /vagrant/hongkaton/app/assets/images
+  /vagrant/hongkaton/app/assets/javascripts
+  /vagrant/hongkaton/app/assets/stylesheets
+  /vagrant/hongkaton/vendor/assets/javascripts
+  /vagrant/hongkaton/vendor/assets/stylesheets
+  /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/rails_db-2.0.4/app/assets/images
+  /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/rails_db-2.0.4/app/assets/javascripts
+  /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/rails_db-2.0.4/app/assets/stylesheets
+  /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/codemirror-rails-5.16.0/vendor/assets/javascripts
+  /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/codemirror-rails-5.16.0/vendor/assets/stylesheets
+  /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/actioncable-5.0.7/lib/assets/compiled
+  /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.3.7/assets/images):
+     5:   <meta charset="utf-8">
+     6:   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+     7:   <link href="/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+     8:   <%= stylesheet_link_tag    'application', media: 'all'%>
+     9:   <%= javascript_include_tag 'application'%>
+    10:   <%= csrf_meta_tags %>
+    11: </head>
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2663744798356959522_47420138617940'
+app/controllers/registrations_controller.rb:3:in `new'
+  Rendering /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (20.9ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.4ms)
+  Rendering /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/vagrant/.rbenv/versions/2.3.4/lib/ruby/gems/2.3.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (114.1ms)
+Started GET "/" for 10.0.2.2 at 2018-11-08 22:01:24 +0900
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (84.0ms)
+Completed 200 OK in 34874ms (Views: 34781.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-11-08 22:02:05 +0900
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (318.6ms)
+Completed 200 OK in 1018ms (Views: 949.3ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/posts" for 10.0.2.2 at 2018-11-08 22:02:09 +0900
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (3.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (155.0ms)
+Completed 200 OK in 904ms (Views: 749.3ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/posts/1" for 10.0.2.2 at 2018-11-08 22:02:11 +0900
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (3.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 7ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2018-11-08 22:02:11 +0900
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (151.7ms)
+Completed 200 OK in 872ms (Views: 869.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2018-11-08 22:02:15 +0900
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (186.0ms)
+Completed 200 OK in 998ms (Views: 995.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2018-11-08 22:02:23 +0900
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2eTGb/03mYRhp0TRV//9VDOZh41ecKqRsxVaGuyVf5vOc+q7IHZPvhuYaRV9//Le+LuxvldilOCugeI0h+XLIg==", "user"=>{"name"=>"asdf", "phone"=>"asdf", "email"=>"asd@asdf", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: password, password_confirmation
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 4701ms (ActiveRecord: 0.0ms)
+
+

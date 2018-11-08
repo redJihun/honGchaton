@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181107155526) do
+ActiveRecord::Schema.define(version: 20181108125739) do
+
+  create_table "farms", force: :cascade do |t|
+    t.string   "name"
+    t.string   "farm_type"
+    t.string   "admin"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_farms_on_user_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"

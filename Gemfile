@@ -1,12 +1,7 @@
 source 'https://rubygems.org'
 
-<<<<<<< HEAD
-# 게시판 확장
+
 gem 'tinymce-rails'
-
-
-gem 'devise'
-=======
 # 회원인증 및 권한설정을 위한 젬
 gem 'devise'     # 회원가입 및 인증
 gem 'rolify'     # role 관리
@@ -20,7 +15,6 @@ gem 'simple_form'
 gem 'letter_opener', group: :development
 
 # db 관리를 위한 잼
->>>>>>> origin/master
 gem 'rails_db'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -163,12 +163,8 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-<<<<<<< HEAD
-    sass (3.7.1)
-=======
     rolify (5.2.0)
-    sass (3.7.0)
->>>>>>> origin/master
+    sass (3.7.1)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
