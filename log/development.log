@@ -1834,3 +1834,74 @@ Migrating to CreatePosts (20181107155526)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+Started GET "/" for 203.237.127.70 at 2018-11-08 18:31:24 +0000
+Cannot render console from 203.237.127.70! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 403ms (Views: 384.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 203.237.127.70 at 2018-11-08 18:31:35 +0000
+Cannot render console from 203.237.127.70! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (51.5ms)
+Completed 200 OK in 101ms (Views: 88.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 203.237.127.70 at 2018-11-08 18:32:04 +0000
+Cannot render console from 203.237.127.70! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sESMe0/sHXyqIpO/HcYXk2St6C8YzT0K+R9xjpxRfGg/Spzc9QrJ7KazeF60+sJqtYune0BTpvxHjma9ozj9ZA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 126ms (Views: 73.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 203.237.127.70 at 2018-11-08 18:32:25 +0000
+Cannot render console from 203.237.127.70! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ik94Fj/sJCJGQhDEdHYv6ZQiS+Fs2OUgFoCzouPvuputQWixhQrwskrT+yXdSvoQRQQEtTRGftaoEaSR3IY7lw==", "user"=>{"email"=>"a@b.c", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@b.c"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "a@b.c"], ["encrypted_password", "$2a$11$lgWL1TFVeXw0i0MRXGzTVOF8UEEfZkjarpqmQyHlUKUPaGprE1jYq"], ["confirmation_token", "v3dE9NQBKPc-K4TMxCXi"], ["confirmation_sent_at", "2018-11-08 18:32:25.332382"], ["created_at", "2018-11-08 18:32:25.332132"], ["updated_at", "2018-11-08 18:32:25.332132"]]
+  [1m[35m (23.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (1.7ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 262.0ms
+Sent mail to a@b.c (11.5ms)
+Date: Thu, 08 Nov 2018 18:32:26 +0000
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: a@b.c
+Message-ID: <5be4813a7009_3b051893824993ea@hjihun-hongchaton-6528453.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome a@b.c!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=v3dE9NQBKPc-K4TMxCXi">Confirm my account</a></p>
+
+Redirected to https://hongchaton-hjihun.c9users.io/
+Completed 302 Found in 882ms (ActiveRecord: 24.8ms)
+
+
+Started GET "/" for 203.237.127.70 at 2018-11-08 18:32:26 +0000
+Cannot render console from 203.237.127.70! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
