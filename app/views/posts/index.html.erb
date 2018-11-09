@@ -27,6 +27,8 @@
         <td><%= post.complete %></td>
       </tr>
     <% end %>
+     
+    <%= render 'searches/search_form', post: @posts.klass %>
   </tbody>
 </table>
 
