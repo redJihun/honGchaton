@@ -19,20 +19,17 @@
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a class="drop" href="#">Pages</a>
+        <li class="active"><a href="/">홈</a></li>
+        <li><a class="drop" href="#">사람구함</a>
           <ul>
-            <li><a href="pages/gallery.html">Gallery</a></li>
-            <li><a href="pages/full-width.html">Full Width</a></li>
-            <li><a href="pages/sidebar-left.html">Sidebar Left</a></li>
-            <li><a href="pages/sidebar-right.html">Sidebar Right</a></li>
-            <li><a href="pages/basic-grid.html">Basic Grid</a></li>
+            <li><a href="serves#index">게시판</a></li>
+            <li><a href="serves/new">새 글 쓰기</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">구인·구직</a>
+        <li><a class="drop" href="#">농활구함</a>
           <ul>
             <li><a href="posts#index">게시판</a></li>
-            <li><a href="posts/new">Write</a></li>
+            <li><a href="posts/new">새 글 쓰기</a></li>
           </ul>
         </li>
           
@@ -40,11 +37,11 @@
         <li><a class="drop" href="#"><%=current_user.name%>님</a>
           <ul>
               <li><a href="pages/gallery.html">MyPage</a></li>
-              <li><%=link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+              <li><%=link_to '로그아웃', destroy_user_session_path, :method => :delete %></li>
             </ul>
         </li>
         <%else%>
-          <%= link_to 'Log In', new_user_session_path %>
+          <%= link_to '로그인', new_user_session_path %>
         <%end%>
       </ul>
     </nav>
@@ -56,14 +53,10 @@
   <footer id="footer" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <h6 class="heading">LIKE LION</h6>
-    <p>멋쟁이사자처럼은 2013년 프로그래머 이두희가 설립한 프로그래밍 교육 단체이다. 궁극적 목표는 컴퓨터공학 비전공자들도 프로그래밍 기초 지식을 배워 자신만의 웹서비스를 만들어 이를 통해 꿈을 실현할 수 있도록 하는 것이다.</p>
+    <p>멋쟁이사자처럼은 2013년 프로그래머 이두희가 설립한 프로그래밍 교육 단체이다. <br>궁극적 목표는 컴퓨터공학 비전공자들도 프로그래밍 기초 지식을 배워 자신만의 <br>웹서비스를 만들어 이를 통해 꿈을 실현할 수 있도록 하는 것이다.</p>
     <ul class="faico clear">
-      <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-      <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-      <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
-      <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-      <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-      <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+      <li><a class="faicon-facebook" href="https://www.facebook.com/likelion.net/"><i class="fa fa-facebook"></i></a></li>
+      <li><a class="faicon-twitter" href="https://twitter.com/hashtag/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC"><i class="fa fa-twitter"></i></a></li>
     </ul>
     <nav>
       <ul class="nospace">
