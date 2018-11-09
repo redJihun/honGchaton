@@ -36,7 +36,7 @@
         <%if user_signed_in?%>
         <li><a class="drop" href="#"><%=current_user.name%>님</a>
           <ul>
-              <li><a href="pages/gallery.html">MyPage</a></li>
+              <li><a href="users/edit">MyPage</a></li>
               <li><%=link_to '로그아웃', destroy_user_session_path, :method => :delete %></li>
             </ul>
         </li>
