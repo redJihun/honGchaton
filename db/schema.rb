@@ -13,12 +13,13 @@
 ActiveRecord::Schema.define(version: 20181109080052) do
 
   create_table "farms", force: :cascade do |t|
-    t.string   "name"
-    t.string   "farm_type"
-    t.string   "admin"
+    t.string   "name",       default: "", null: false
+    t.string   "farm_type",  default: "", null: false
+    t.string   "admin",      default: "", null: false
+    t.string   "location",   default: "", null: false
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.index ["user_id"], name: "index_farms_on_user_id"
   end
 
@@ -29,8 +30,8 @@ ActiveRecord::Schema.define(version: 20181109080052) do
     t.integer  "person"
     t.string   "location"
     t.string   "welfare"
-    t.date     "start_date"
-    t.date     "end_data"
+    t.string   "start_date"
+    t.string   "end_data"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -52,8 +53,8 @@ ActiveRecord::Schema.define(version: 20181109080052) do
     t.string   "title"
     t.string   "content"
     t.integer  "person"
-    t.date     "start_date"
-    t.date     "end_data"
+    t.string   "start_date"
+    t.string   "end_data"
     t.string   "location"
     t.integer  "user_id"
     t.integer  "complete"

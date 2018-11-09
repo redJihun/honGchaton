@@ -7,8 +7,8 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.integer :person
       t.string :location
       t.string :welfare
-      t.date :start_date
-      t.date :end_data
+      t.string :start_date
+      t.string :end_data
       t.references :user, foreign_key: true
 
       t.timestamps
