@@ -1,3 +1,6 @@
 class Farm < ApplicationRecord
-  has_one :user
+    rolify
+    include Authority::UserAbilities
+    has_one :user
+    has_many :posts
 end

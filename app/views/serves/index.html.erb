@@ -28,9 +28,9 @@
         <td><%= serf.location %></td>
         <td><%= serf.user %></td>
         <td><%= serf.complete %></td>
-        <td><%= link_to 'Show', serf %></td>
-        <td><%= link_to 'Edit', edit_serf_path(serf) %></td>
-        <td><%= link_to 'Destroy', serf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', serf%></td>
+        <td><%= link_to 'Edit', edit_serf_path(serf) if serf.updatable_by? current_farm%></td>
+        <td><%= link_to 'Destroy', serf, method: :delete, data: { confirm: 'Are you sure?' } if serf.deletable_by? current_farm%></td>
       </tr>
     <% end %>
   </tbody>
