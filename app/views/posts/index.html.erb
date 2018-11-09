@@ -1,34 +1,30 @@
-<p id="notice"><%= notice %></p>
-
 
 <table class="table">
   <thead>
     <tr>
-      <th>type</th>
-      <th>Title</th>
-      <th>Created by</th>
-      <th>Actions</th>
+      <th>지역</th>
+      <th>내용</th>
+      <th>일정</th>
+      <th>숙식제공</th>
+      <th>등록일</th>
+      <th>모집</th>
     </tr>
   </thead>
 
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td>구인</td>   
+        <td><%=post.location %></td>   
         <td class="col-md-6 col-xs-6"><%= post.title %></td>
-        <td><%= post.user.present? ? post.user.email : "n/a" %>, <%= time_ago_in_words(post.created_at) %> ago</td>
-        <!--<td>-->
-        <!--  <%= link_to "<span class='glyphicon glyphicon-eye-open'></span>".html_safe, post %>&nbsp;-->
-        <!--  <%= link_to "<span class='glyphicon glyphicon-edit'></span>".html_safe, edit_post_path(post) %>&nbsp;-->
-        <!--  <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, post, method: :delete, data: { confirm: 'Are you sure?' } %>-->
-        <!--</td>-->
-        <td>
-          <%= link_to 'show', post %>&nbsp;
-          <% if user_signed_in? %>
-            <%= link_to 'edit', edit_post_path(post) if post.updatable_by? current_user %>&nbsp;
-            <%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } if post.deletable_by? current_user %>
-          <% end %>
-        </td>
+        <td><% post.start_date%> ~ <%post.end_data%></td>
+        <!--<td>
+          <%= link_to "<span class='glyphicon glyphicon-eye-open'></span>".html_safe, post %>&nbsp;
+          <%= link_to "<span class='glyphicon glyphicon-edit'></span>".html_safe, edit_post_path(post) %>&nbsp;
+          <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td> 이건 글 작성, 글 수정, 글 삭제 기능 나중에-->
+        <td><%=post.welfare%></td>
+        <td> <%= time_ago_in_words(post.created_at) %> ago</td>
+        <td><%= post.complete %></td>
       </tr>
     <% end %>
   </tbody>
