@@ -1,31 +1,60 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @post.content.html_safe %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user.name %>
-</p>
-
-<%if @post.id == current_user.id%> #글 작성자라면
-  <button type="button" onclick="toggle();">모집 완료</button>
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-<%end%>
-
-<%= link_to 'Back', posts_path %>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-5">
+    <div class="form-group">
+      <h1 style="text-align: center"><%=label_tag @post.title%><br></h1>
+    </div>
+    
+    <hr>
+    
+    <div class="form-group">
+      <p style="font-size:1.5em">
+        지역&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <strong><%= @post.location_one %>&nbsp<%= @post.location_two %></strong>
+      </p>
+    </div>
+    
+    <div class="form-group">
+      <p style="font-size:1.5em">
+        일정&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <strong><%= @post.start_date %>&nbsp~&nbsp<%= @post.end_date %></strong>
+      </p>
+    </div>
+    
+    <div class="form-group">
+      <p style="font-size:1.5em">
+        숙식제공&nbsp&nbsp
+        <strong><%= @post.welfare %></strong>
+      </p>
+    </div>
+    
+    <div class="form-group">
+      <p style="font-size:1.5em">
+        연락처&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <strong><%= @post.phone %></strong>
+      </p>
+    </div>
+    
+    <hr>
+    <p>
+      <strong>Content:</strong>
+      <%= @post.content.html_safe %>
+    </p>
+    
+    <p>
+      <strong>User:</strong>
+      <%= @post.user.name %>
+    </p>
+    
+    <%if @post.user.id == current_user.id%> #글 작성자라면
+      <button type="button" onclick="toggle();">모집 완료</button>
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+    <%end%>
+    
+    <%= link_to 'Back', posts_path %>
+  </div>
+</div
 
 <script>
-  function toggle(){
-    <% @post.complete = !(@post.complete) %>
-    <% @post.save %>
-    alert(<%=@post.complete%>);
-  }
+
 </script>

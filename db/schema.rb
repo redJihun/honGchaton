@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20181109080052) do
     t.string   "end_date"
     t.string   "location_one"
     t.string   "location_two"
+    t.string   "phone"
     t.integer  "user_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false

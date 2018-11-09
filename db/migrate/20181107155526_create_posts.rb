@@ -10,6 +10,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :end_date
       t.string :location_one
       t.string :location_two
+      t.string :phone
       t.references :user, foreign_key: true
       t.timestamps
     end
