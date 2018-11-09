@@ -65,7 +65,7 @@
       <%= link_to '글 삭제', "/posts/#{@post.id}", :method => :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
       
     <%end%>
-    <%= link_to '뒤로 가기', posts_path, class: "btn btn-default" %>
+    <%= link_to '뒤로 가기', "/posts?post_type=#{@post_type}", class: "btn btn-default" %>
     <br>
     
     

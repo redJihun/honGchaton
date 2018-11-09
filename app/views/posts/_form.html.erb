@@ -72,13 +72,14 @@
     <%= tinymce :language => "en" %>
     <%= f.text_area :content, id: :post_content, class: "form-control tinymce", rows: "10" %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :post_type, :value => @post_type %>
   </div>
 
 
   <%=hidden_field_tag 'welfare', 'asdf'%>
   <div class="actions">
     <%= f.submit:글쓰기, class: "btn btn-default", style: "display: inline" %>
-    <button class="btn btn-default" style="display: inline"><%= link_to '뒤로 가기', posts_path %></button>
+    <button class="btn btn-default" style="display: inline"><%= link_to '뒤로 가기', "/posts?post_type=#{@post_type}" %></button>
   </div>
 <% end %>
 

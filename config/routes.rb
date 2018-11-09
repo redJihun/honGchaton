@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :serves
   resources :posts
-  get '/posts/index/:search' => 'posts#index'
+  get '/posts/index/:search&:post_type' => 'posts#index'
   get '/posts/toggle/:post_id' => 'posts#toggle'
+  get '/posts/:id&:post_type' => 'post#show'
+
+
 
 
   devise_for :users, :controllers => {:registrations => "registrations"}
