@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :content
       t.integer :complete, default: 0
       t.integer :person # 인풋태그 
+      t.string :phone
       t.string :welfare
       t.string :start_date
       t.string :end_date

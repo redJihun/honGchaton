@@ -5,7 +5,10 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    @posts = Post.order(created_at: :desc)
+
+    if params[:search]
+      @posts = Post.where('location_one = ?', params[:search]).reverse
+    end
   end
 
   # GET /posts/1
@@ -21,6 +24,13 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     authorize_action_for @post
+  end
+
+  def toggle
+    @post = Post.find(params[:post_id])
+    @post.complete =  1 - @post.complete.to_i
+    @post.save
+    redirect_to (posts_url+'/'+(@post.id.to_s))
   end
 
   # POST /posts

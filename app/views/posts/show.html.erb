@@ -15,17 +15,18 @@
   <%= @post.user.name %>
 </p>
 
-<%if @post.id == current_user.id%> #글 작성자라면
-  <button type="button" onclick="toggle();">모집 완료</button>
+<%if @post.user_id == current_user.id%>
+  <%if @post.complete.to_i == 0%>
+    <a href="/posts/toggle/<%=@post.id%>"><button type="button" >모집 완료</button></a>
+  <%else%>
+    <a href="/posts/toggle/<%=@post.id%>"><button type="button" >재 모집</button></a>
+  <%end%>
+  
   <%= link_to 'Edit', edit_post_path(@post) %> |
 <%end%>
 
 <%= link_to 'Back', posts_path %>
 
 <script>
-  function toggle(){
-    <% @post.complete = !(@post.complete) %>
-    <% @post.save %>
-    alert(<%=@post.complete%>);
-  }
-</script>
+
+
