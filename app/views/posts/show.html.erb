@@ -1,60 +1,76 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-5">
+    <hr style="border: solid 1px;">
     <div class="form-group">
       <h1 style="text-align: center"><%=label_tag @post.title%><br></h1>
     </div>
     
     <hr>
     
-    <div class="form-group">
-      <p style="font-size:1.5em">
-        지역&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <strong><%= @post.location_one %>&nbsp<%= @post.location_two %></strong>
-      </p>
+    <div>
+      <p style="text-align: right">글쓴이 : <%= @post.user.name %></p>
+      <div class="form-group">
+        <p style="font-size:1.5em">
+          지역&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= @post.location_one %>&nbsp<%= @post.location_two %>
+        </p>
+      </div>
+      
+      <div class="form-group">
+        <p style="font-size:1.5em">
+          일정&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= @post.start_date %>&nbsp~&nbsp<%= @post.end_date %>
+        </p>
+      </div>
+      
+       <div class="form-group">
+        <p style="font-size:1.5em">
+          희망인원&nbsp&nbsp
+          <%= @post.person %>명
+        </p>
+      </div>
+      
+      <div class="form-group">
+        <p style="font-size:1.5em">
+          숙식제공&nbsp&nbsp
+          <%= @post.welfare %>
+        </p>
+      </div>
+      
+      <div class="form-group">
+        <p style="font-size:1.5em">
+          연락처&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= @post.phone %>
+        </p>
+      </div>
     </div>
+    <hr style="border: solid 1px;">
     
-    <div class="form-group">
-      <p style="font-size:1.5em">
-        일정&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <strong><%= @post.start_date %>&nbsp~&nbsp<%= @post.end_date %></strong>
-      </p>
-    </div>
+    <p style="color:#A6A6A6"><strong>상세 내용</strong></p>
     
-    <div class="form-group">
-      <p style="font-size:1.5em">
-        숙식제공&nbsp&nbsp
-        <strong><%= @post.welfare %></strong>
-      </p>
-    </div>
-    
-    <div class="form-group">
-      <p style="font-size:1.5em">
-        연락처&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <strong><%= @post.phone %></strong>
-      </p>
-    </div>
-    
-    <hr>
-    <p>
-      <strong>Content:</strong>
-      <%= @post.content.html_safe %>
-    </p>
-    
-    <p>
-      <strong>User:</strong>
-      <%= @post.user.name %>
-    </p>
+    <%= @post.content.html_safe %>
+    <hr style="border: solid 1px;">
+  
     
     <%if @post.user_id == current_user.id%>
       <%if @post.complete.to_i == 0%>
-        <a href="/posts/toggle/<%=@post.id%>"><button type="button" >모집 완료</button></a>
+        <a href="/posts/toggle/<%=@post.id%>" class="btn btn-default">모집 완료</a>
       <%else%>
-        <a href="/posts/toggle/<%=@post.id%>"><button type="button" >재 모집</button></a>
+        <a href="/posts/toggle/<%=@post.id%>" class="btn btn-default">재 모집</button></a>
       <%end%>
-
-        <%= link_to 'Edit', edit_post_path(@post) %> |
+      <br>
+      <br>
+      <%= link_to '글 수정', edit_post_path(@post), class: "btn btn-default" %> 
+      <%= link_to '글 삭제', "/posts/#{@post.id}", :method => :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+      
     <%end%>
-    <%= link_to 'Back', posts_path %>
+    <%= link_to '뒤로 가기', posts_path, class: "btn btn-default" %>
+    <br>
+    
+    
   </div>
 </div
+
+<scripts>
+</scripts>
