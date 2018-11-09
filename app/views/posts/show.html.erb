@@ -7,12 +7,12 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @post.content %>
+  <%= @post.content.html_safe %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @post.user %>
+  <%= @post.user.name %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

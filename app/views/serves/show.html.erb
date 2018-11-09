@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @serf.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @serf.content %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @serf.person %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @serf.start_date %>
+</p>
+
+<p>
+  <strong>End data:</strong>
+  <%= @serf.end_data %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @serf.location %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @serf.user %>
+</p>
+
+<p>
+  <strong>Complete:</strong>
+  <%= @serf.complete %>
+</p>
+
+<%= link_to 'Edit', edit_serf_path(@serf) %> |
+<%= link_to 'Back', serves_path %>

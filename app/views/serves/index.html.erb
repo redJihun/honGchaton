@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Serves</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Person</th>
+      <th>Start date</th>
+      <th>End data</th>
+      <th>Location</th>
+      <th>User</th>
+      <th>Complete</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @serves.each do |serf| %>
+      <tr>
+        <td><%= serf.title %></td>
+        <td><%= serf.content %></td>
+        <td><%= serf.person %></td>
+        <td><%= serf.start_date %></td>
+        <td><%= serf.end_data %></td>
+        <td><%= serf.location %></td>
+        <td><%= serf.user %></td>
+        <td><%= serf.complete %></td>
+        <td><%= link_to 'Show', serf %></td>
+        <td><%= link_to 'Edit', edit_serf_path(serf) %></td>
+        <td><%= link_to 'Destroy', serf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Serf', new_serf_path %>

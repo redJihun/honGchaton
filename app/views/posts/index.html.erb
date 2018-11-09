@@ -33,6 +33,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>type</th>
       <th>Title</th>
       <th>Created by</th>
       <th>Actions</th>
@@ -42,6 +43,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
+        <td>구인</td>   
         <td class="col-md-6 col-xs-6"><%= post.title %></td>
         <td><%= post.user.present? ? post.user.email : "n/a" %>, <%= time_ago_in_words(post.created_at) %> ago</td>
         <td>
