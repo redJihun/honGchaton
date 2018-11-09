@@ -2,33 +2,31 @@
 <table class="table">
   <thead>
     <tr>
-      <th>지역</th>
-      <th>내용</th>
-      <th>일정</th>
-      <th>숙식제공</th>
-      <th>등록일</th>
-      <th>모집</th>
+      <th style = "text-align:center">지역</th>
+      <th style = "text-align:center">내용</th>
+      <th style = "text-align:center">일정</th>
+      <th style = "text-align:center">숙식제공</th>
+      <th style = "text-align:center">등록일</th>
+      <th style = "text-align:center">모집</th>
     </tr>
   </thead>
 
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%=post.location %></td>   
-        <td class="col-md-6 col-xs-6"><%= post.title %></td>
-        <td><% post.start_date%> ~ <%post.end_data%></td>
+        <td style = "text-align:center"><%=post.location %></td>   
+        <td class="col-md-6 col-xs-6" style = "text-align:center"><%= post.title %></td>
+        <td style = "text-align:center"><% post.start_date%> ~ <%post.end_data%></td>
         <!--<td>
           <%= link_to "<span class='glyphicon glyphicon-eye-open'></span>".html_safe, post %>&nbsp;
           <%= link_to "<span class='glyphicon glyphicon-edit'></span>".html_safe, edit_post_path(post) %>&nbsp;
           <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, post, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td> 이건 글 작성, 글 수정, 글 삭제 기능 나중에-->
-        <td><%=post.welfare%></td>
-        <td> <%= time_ago_in_words(post.created_at) %> ago</td>
-        <td><%= post.complete %></td>
+        <td style = "text-align:center"><%=post.welfare%></td>
+        <td style = "text-align:center"> <%= time_ago_in_words(post.created_at) %> ago</td>
+        <td style = "text-align:center"><%= post.complete %></td>
       </tr>
     <% end %>
-     
-    <%= render 'searches/search_form', post: @posts.klass %>
   </tbody>
 </table>
 
