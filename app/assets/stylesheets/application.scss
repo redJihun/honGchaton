@@ -26,3 +26,16 @@ $navbar-default-link-hover-bg: black;
 body { margin-top: 60px; }
 
 @import "posts";
+
+
+@font-face {
+    font-family: NanumSquareWeb;
+    src: local(NanumSquareR),
+         local(NanumSquare),
+         url(NanumSquareR.eot?#iefix) format('embedded-opentype'),
+         url(NanumSquareR.woff) format('woff'),
+         url(NanumSquareR.ttf) format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    unicode-range: U+0-10FFFF;
+  }

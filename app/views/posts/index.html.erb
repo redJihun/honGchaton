@@ -14,7 +14,7 @@
     
       <tbody>
         <% @posts.each do |post| %>
-          <tr>
+          <tr style = "cursor:pointer;" onClick = " location.href='<%=post_path(post.id)%>' " onMouseOver = " indow.status = '<%=post_path(post.id)%>' " onMouseOut = " window.status = '' " >
             <td style = "text-align:center"><%=post.location_one%> <%=post.location_two%></td>   
             <td class="col-md-6 col-xs-6" style = "text-align:center"><%= post.title %></td>
             <td style = "text-align:center"><% post.start_date%> ~ <%post.end_date%></td>

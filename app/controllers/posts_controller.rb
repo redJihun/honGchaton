@@ -7,8 +7,11 @@ class PostsController < ApplicationController
     @posts = Post.all
 
     if params[:search]
-      @posts = Post.where('location_one = ?', params[:search]).reverse
+      @posts = Post.where('location_one = ?', params[:search])
     end
+    @posts = @posts.reverse
+
+   
   end
 
   # GET /posts/1
@@ -58,6 +61,12 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
     authorize_action_for @post
+    @post.user_id = current_user.id
+    @post.location_one = params[:location_one]
+    @post.location_two = params[:location_two]
+    @post.start_date =  params[:start_date]
+    @post.end_date = params[:end_date]
+    @post.welfare = params[:welfare]
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }

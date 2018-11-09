@@ -1,2 +1,0 @@
-module ServesHelper
-end

@@ -54,17 +54,19 @@
   <section class="hoc container clear"> 
     <!-- ################################################################################################ -->
     <div class="sectiontitle">
-      <h6 class="heading">Volutpat mollis vivamus</h6>
-      <p>Pharetra libero non facilisis imperdiet mi augue feugiat.</p>
+      <h6 class="heading">농촌 봉사활동 함께 해요!</h6>
+      <p>실시간으로 등록되고 있는 봉사자모집 게시글입니다.</p>
     </div>
     <ul class="nospace group">
       <li class="one_half first">
-        농가 게시판<br>
-        <br>1
-        <br>2
-        <br>3
-        <br>4
-        <br>5
+        <% @temps.each do |t| %>
+          <%if @cnt == 5%>
+            <%@cnt=0%>
+            <%break%>
+          <%end%>
+          <a href="/posts/<%=t.id%>"><h4><%=t.location_one%>   |   <%=t.title%></h4></a>
+          <%@cnt=@cnt+1%>
+        <%end%>
         <!-- <article class="group">
           <div class="one_half first"><a href="#"><img src="images/demo/320x240.png" alt=""></a></div>
           <div class="one_half">
@@ -75,7 +77,14 @@
         </article> -->
       </li>
       <li class="one_half">
-        봉사자 게시판
+        <% @temps.each do |t| %>
+          <%if @cnt < 5%>
+            <%@cnt=@cnt+1%>   
+            <%next%>
+          <%end%>
+          <a href="/posts/<%=t.id%>"><h4><%=t.location_one%>   |   <%=t.title%></h4></a>
+          <%@cnt=@cnt+1%>
+        <%end%>
         <!-- <article class="group">
           <div class="one_half first"><a href="#"><img src="images/demo/320x240.png" alt=""></a></div>
           <div class="one_half">
