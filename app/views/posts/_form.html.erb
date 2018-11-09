@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :title %> <br>
+    <%= f.label "제목" %> <br>
     <%= f.text_field :title, class: "form-control", required: "required"%>
   </div>
   
   <div class="form-group">
     <%= f.label :지역 %> <br>
-    <select class="form-control" id="select1" style="display: inline; width: 120px;" onchange="itemChange();">
+    <select name="location_one" class="form-control" id="select1" style="display: inline; width: 120px;" onchange="itemChange();">
       <option>지역 선택</option>
       <option>서울</option>
       <option>경기</option>
@@ -38,11 +38,14 @@
       <option>전남</option>
       <option>제주</option>
     </select>
-    <select class="form-control" id="select2" style="display: inline; width: 200px;">
+    <select name="location_two" class="form-control" id="select2" style="display: inline; width: 200px;">
       <option>시 · 군</option>
     </select>
+    
   </div> 
-  
+  <%= f.label "희망 인원" %> <br>
+    <%= f.number_field :person, class: "form-control", required: "required"%>
+    <br>
   <div>
     <%= f.label :일정 %> <br>
     <input type="date" id="start" name="start_date" style="display: inline">
@@ -53,10 +56,10 @@
   <div class="form-group">
     <%= f.label :숙식제공 %> <br>
     <label class="checkbox-inline">
-      <input type="checkbox" id="inlineCheckbox1" value="option1"> 식사 제공
+      <input type="checkbox" id="inlineCheckbox1" value="option1" onchange="func();"> 식사 제공
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" id="inlineCheckbox2" value="option2"> 잠자리 제공
+      <input type="checkbox" id="inlineCheckbox2" value="option2" onchange="func();"> 잠자리 제공
     </label>
   </div>
   
@@ -70,7 +73,9 @@
     <%= f.text_area :content, id: :post_content, class: "form-control tinymce", rows: "10" %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
-  
+
+
+  <%=hidden_field_tag 'welfare', 'asdf'%>
   <div class="actions">
     <%= f.submit:글쓰기, class: "btn btn-default", style: "display: inline" %>
     <button class="btn btn-default" style="display: inline"><%= link_to '뒤로 가기', posts_path %></button>
@@ -78,8 +83,19 @@
 <% end %>
 
 
-
-
+<script>
+  function func(){
+    var st1= "";
+    var st2= "";
+    if($("#inlineCheckbox1").is(":checked"))
+      st1 ="식사제공";
+    
+    if($("#inlineCheckbox2").is(":checked"))
+      st2 ="숙박제공";
+    
+    $("#welfare").val(st1+st2);
+  }
+</script>
 
 <script>
   function itemChange(){

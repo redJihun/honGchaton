@@ -3,14 +3,14 @@ class CreatePosts < ActiveRecord::Migration[5.0]
     create_table :posts do |t|
       t.string :title
       t.string :content
-      t.integer :complete
-      t.integer :person
-      t.string :location
+      t.integer :complete, default: 0
+      t.integer :person # 인풋태그 
       t.string :welfare
       t.string :start_date
-      t.string :end_data
+      t.string :end_date
+      t.string :location_one
+      t.string :location_two
       t.references :user, foreign_key: true
-
       t.timestamps
     end
   end

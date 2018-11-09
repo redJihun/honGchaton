@@ -6,7 +6,8 @@ class CreateServes < ActiveRecord::Migration[5.0]
       t.integer :person
       t.string :start_date
       t.string :end_data
-      t.string :location
+      t.string :location_one
+      t.string :location_two
       t.references :user, foreign_key: true
       t.integer :complete
 

@@ -26,15 +26,16 @@ ActiveRecord::Schema.define(version: 20181109080052) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
-    t.integer  "complete"
+    t.integer  "complete",     default: 0
     t.integer  "person"
-    t.string   "location"
     t.string   "welfare"
     t.string   "start_date"
-    t.string   "end_data"
+    t.string   "end_date"
+    t.string   "location_one"
+    t.string   "location_two"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -55,11 +56,12 @@ ActiveRecord::Schema.define(version: 20181109080052) do
     t.integer  "person"
     t.string   "start_date"
     t.string   "end_data"
-    t.string   "location"
+    t.string   "location_one"
+    t.string   "location_two"
     t.integer  "user_id"
     t.integer  "complete"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["user_id"], name: "index_serves_on_user_id"
   end
 
