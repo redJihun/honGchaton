@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20181109080052) do
-=======
 ActiveRecord::Schema.define(version: 20181109080032) do
->>>>>>> origin/user_authorization
 
   create_table "farms", force: :cascade do |t|
     t.string   "name",       default: "", null: false
