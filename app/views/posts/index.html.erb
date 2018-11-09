@@ -1,6 +1,6 @@
 <div class="wrapper row" style="min-height: 80vh;">
   <div class="col-md-2"></div>
-  <div class="col-md-8">
+
     <h2>봉사자 모집 게시판</h2>
     <table class="table">
       <thead>
@@ -16,7 +16,7 @@
     
       <tbody>
         <% @posts.each do |post| %>
-          <tr style = "cursor:pointer;" onClick = " location.href='<%="/posts/#{post.id}&#{@post_type}&asdf"%>' " onMouseOver = " indow.status = '<%="/posts/#{post.id}&#{@post_type}"%>' " onMouseOut = " window.status = '' " >
+          <tr style = "cursor:pointer;" onClick = " location.href='<%="/posts/#{post.id}&#{@post_type}"%>' " onMouseOver = " indow.status = '<%="/posts/#{post.id}&#{@post_type}"%>' " onMouseOut = " window.status = '' " >
             <td style = "text-align:center"><%=post.location_one%> <%=post.location_two%></td>   
             <td class="col-md-5 col-xs-6" style = "text-align:center"><%= post.title %></td>
             <td style = "text-align:center"><%= post.start_date%> ~ <br><%= post.end_date%></td>
@@ -30,4 +30,3 @@
   
     <br>
   <%= link_to '새 글쓰기', "/posts/new?post_type=#{@post_type}", class: "btn btn-default" %>
-</div>

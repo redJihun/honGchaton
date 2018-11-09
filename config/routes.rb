@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :posts
   get '/posts/index/:search&:post_type' => 'posts#index'
   get '/posts/toggle/:post_id' => 'posts#toggle'
-  get '/posts/:id&:post_type' => 'post#show'
+  get '/posts/:id&:post_type' => 'posts#show'
 
 
 

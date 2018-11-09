@@ -43,7 +43,11 @@
     </select>
     
   </div> 
+  <% if current_user.farm%>
   <%= f.label "희망 인원" %> <br>
+  <%else%>
+    <%= f.label "봉사 인원" %> <br>
+  <%end%>
     <%= f.number_field :person, class: "form-control", required: "required"%>
     <br>
   <div>
@@ -53,6 +57,7 @@
      <input type="date" id="end" name="end_date" style="display: inline">
   </div>
   <br>
+  <%if !(current_user.farm)%>
   <div class="form-group">
     <%= f.label :숙식제공 %> <br>
     <label class="checkbox-inline">
@@ -62,6 +67,7 @@
       <input type="checkbox" id="inlineCheckbox2" value="option2" onchange="func();"> 잠자리 제공
     </label>
   </div>
+  <%end%>
   
   <div class="form-group">
     <%= f.label :연락처 %> <br>
