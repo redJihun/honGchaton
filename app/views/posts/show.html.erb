@@ -15,5 +15,17 @@
   <%= @post.user.name %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<%if @post.id == current_user.id%> #글 작성자라면
+  <button type="button" onclick="toggle();">모집 완료</button>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+<%end%>
+
 <%= link_to 'Back', posts_path %>
+
+<script>
+  function toggle(){
+    <% @post.complete = !(@post.complete) %>
+    <% @post.save %>
+    alert(<%=@post.complete%>);
+  }
+</script>
