@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post_type = @post.post_type
   end
 
   # GET /posts/new
