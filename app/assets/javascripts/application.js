@@ -15,3 +15,5 @@
 //= require tinymce
 //= require tinymce-jquery
 //= require_tree .
+// Loads all Bootstrap javascripts
+//= require bootstrap
