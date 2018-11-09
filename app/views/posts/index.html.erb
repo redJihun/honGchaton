@@ -1,4 +1,7 @@
-<div class="wrapper row2" style="min-height: 80vh;">
+<div class="wrapper row" style="min-height: 80vh;">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <h2>봉사자 모집 게시판</h2>
     <table class="table">
       <thead>
         <tr>
@@ -15,13 +18,8 @@
         <% @posts.each do |post| %>
           <tr style = "cursor:pointer;" onClick = " location.href='<%="/posts/#{post.id}&#{@post_type}&asdf"%>' " onMouseOver = " indow.status = '<%="/posts/#{post.id}&#{@post_type}"%>' " onMouseOut = " window.status = '' " >
             <td style = "text-align:center"><%=post.location_one%> <%=post.location_two%></td>   
-            <td class="col-md-6 col-xs-6" style = "text-align:center"><%= post.title %></td>
-            <td style = "text-align:center"><% post.start_date%> ~ <%post.end_date%></td>
-            <!--<td>
-              <%= link_to "<span class='glyphicon glyphicon-eye-open'></span>".html_safe, post %>&nbsp;
-              <%= link_to "<span class='glyphicon glyphicon-edit'></span>".html_safe, edit_post_path(post) %>&nbsp;
-              <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, post, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </td> 이건 글 작성, 글 수정, 글 삭제 기능 나중에-->
+            <td class="col-md-5 col-xs-6" style = "text-align:center"><%= post.title %></td>
+            <td style = "text-align:center"><%= post.start_date%> ~ <br><%= post.end_date%></td>
             <td style = "text-align:center"><%=post.welfare%></td>
             <td style = "text-align:center"> <%= time_ago_in_words(post.created_at) %> ago</td>
             <td style = "text-align:center"><%= post.person %></td>
@@ -31,5 +29,5 @@
     </table>
   
     <br>
-  <%= link_to 'New Post', "/posts/new?post_type=#{@post_type}", class: "btn btn-default" %>
+  <%= link_to '새 글쓰기', "/posts/new?post_type=#{@post_type}", class: "btn btn-default" %>
 </div>

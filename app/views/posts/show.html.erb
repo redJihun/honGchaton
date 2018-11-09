@@ -9,7 +9,11 @@
     <hr>
     
     <div>
-      <p style="text-align: right">글쓴이 : <%= @post.user.name %></p>
+      <p style='text-align:right;'>
+        created by <%= current_user.name %>
+        <br>
+         <%= @post.created_at %>
+      </p>
       <div class="form-group">
         <p style="font-size:1.5em">
           지역&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -68,9 +72,8 @@
     <%= link_to '뒤로 가기', "/posts?post_type=#{@post_type}", class: "btn btn-default" %>
     <br>
     
-    
   </div>
 </div
-
+<br><br>
 <scripts>
 </scripts>
