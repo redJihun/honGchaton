@@ -11,6 +11,12 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+
+db/development.sqlite3
+/db/development.sqlite3
+log/*
+
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -19,3 +25,5 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+

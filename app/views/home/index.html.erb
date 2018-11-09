@@ -22,14 +22,14 @@
             <li><a href="posts/new">Write</a></li>
           </ul>
         </li>
-        <%if user_signed_in?%>
-          <li><a href="#"><%=current_user.email%>님</a></li>
-        <%else%>
-          <li><a href="#">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></li>
-        <%end%>
           
         <%if user_signed_in?%>
-          <%= link_to 'Log Out', destroy_user_session_path, :method => :delete %>
+        <li><a class="drop" href="#"><%=current_user.email%>님</a>
+          <ul>
+              <li><a href="pages/gallery.html">MyPage</a></li>
+              <li><%=link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+            </ul>
+        </li>
         <%else%>
           <%= link_to 'Log In', new_user_session_path %>
         <%end%>
@@ -45,10 +45,19 @@
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <article>
-      <p>우리 농활 갈래? 근데 어디서?</p>
-      <h2 class="heading">농촌 봉사활동을 하고 싶지만 정보가 없는 학생들을 위한 서비스</h2>
-      <p>일손 부족한 농업 종사자들이 봉사자를 찾거나, 봉사를 하고 싶은 학생들이 봉사 농가를 찾을 수 있도록 매칭</p>
-      <footer><a class="btn" href="#">Sign up</a></footer>
+      <h2>우리 농활 갈래? 어디서?</h2><br>
+      <p>지금 농활정보를 검색하세요!</p>
+      
+      <footer>
+        <form class="form-inline">
+          <div class="form-group">
+            <input type="text" class="form-control" style="display: inline-block">
+          </div>
+          <div class="form-group">
+            <a class="btn" href="#">Search</a>
+          </div>
+        </form>
+    </footer>
     </article>
     <!-- ################################################################################################ -->
   </div>
@@ -56,146 +65,14 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
-  <main class="hoc container clear"> 
-    <!-- main body -->
-    <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <h6 class="heading">Tellus sed interdum</h6>
-      <p>Mauris nec tortor lectus vehicula leo quis elementum.</p>
-    </div>
-    <ul class="nospace group services">
-      <li class="one_third first">
-        <article class="infobox">
-          <h6 class="heading"><i class="fa fa-joomla"></i> <a href="#">Elementum</a></h6>
-          <p>Risus diam vel erat sed ligula nisl dictum quis tempus eu dictum sit amet tortor [&hellip;]</p>
-        </article>
-      </li>
-      <li class="one_third">
-        <article class="infobox">
-          <h6 class="heading"><i class="fa fa-key"></i> <a href="#">Porttitor</a></h6>
-          <p>Nulla lacinia vulputate augue pellentesque mattis nibh ut metus aenean sit amet [&hellip;]</p>
-        </article>
-      </li>
-      <li class="one_third">
-        <article class="infobox">
-          <h6 class="heading"><i class="fa fa-balance-scale"></i> <a href="#">Habitasse</a></h6>
-          <p>Turpis non dui molestie auctor suspendisse lorem morbi commodo vulputate lorem [&hellip;]</p>
-        </article>
-      </li>
-      <li class="one_third first">
-        <article class="infobox">
-          <h6 class="heading"><i class="fa fa-mixcloud"></i> <a href="#">Sollicitudin</a></h6>
-          <p>Aenean porta vestibulum blandit pede pellentesque ac ipsum vel massa imperdiet [&hellip;]</p>
-        </article>
-      </li>
-      <li class="one_third">
-        <article class="infobox">
-          <h6 class="heading"><i class="fa fa-bug"></i> <a href="#">Facilisis</a></h6>
-          <p>Semper donec mi odio vehicula vel euismod vel suscipit at velit suspendisse lacinia [&hellip;]</p>
-        </article>
-      </li>
-      <li class="one_third">
-        <article class="infobox">
-          <h6 class="heading"><i class="fa fa-pied-piper-alt"></i> <a href="#">Adipiscing</a></h6>
-          <p>In diam aenean erat orci mollis quis gravida sed mollis a quam nullam justo massa [&hellip;]</p>
-        </article>
-      </li>
-    </ul>
-    <!-- ################################################################################################ -->
-    <!-- / main body -->
-    <div class="clear"></div>
-  </main>
-</div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/02.png');">
-  <div class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <div class="flexslider testimonials">
-      <ul class="slides">
-        <li>
-          <article><img class="circle" src="images/demo/100x100.png" alt="">
-            <blockquote>adipiscing a convallis ultricies luctus et dolor integer consectetuer lacus sit amet aliquet consequat metus eros volutpat leo id auctor elit lorem eu orci sed augue class aptent taciti sociosqu ad.</blockquote>
-            <ul class="nospace starating">
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-            </ul>
-            <h6 class="heading">Jane Doe</h6>
-          </article>
-        </li>
-        <li>
-          <article><img class="circle" src="images/demo/100x100.png" alt="">
-            <blockquote>litora torquent per conubia nostra per inceptos himenaeos proin convallis metus sit amet odio mauris molestie diam at magna donec suscipit arcu quis volutpat accumsan velit justo venenatis orci nec.</blockquote>
-            <ul class="nospace starating">
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star-half-o"></i></li>
-              <li><i class="fa fa-star-o neutral"></i></li>
-            </ul>
-            <h6 class="heading">John Doe</h6>
-          </article>
-        </li>
-        <li>
-          <article><img class="circle" src="images/demo/100x100.png" alt="">
-            <blockquote>imperdiet odio lorem euismod tellus proin commodo sollicitudin eros fusce non lectus aliquam erat volutpat in molestie sed consectetuer sed imperdiet facilisis urna vivamus aliquet commodo diam cras.</blockquote>
-            <ul class="nospace starating">
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star"></i></li>
-              <li><i class="fa fa-star-o neutral"></i></li>
-              <li><i class="fa fa-star-o neutral"></i></li>
-              <li><i class="fa fa-star-o neutral"></i></li>
-            </ul>
-            <h6 class="heading">Jen Doe</h6>
-          </article>
-        </li>
-      </ul>
-    </div>
-    <!-- ################################################################################################ -->
-  </div>
-</div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row2">
-  <section class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <h6 class="heading">Lectus molestie porttitor</h6>
-      <p>Donec accumsan ligula vitae magna mauris neque phasellus.</p>
-    </div>
-    <ul class="nospace group elements">
-      <li class="one_third first">
-        <article><a href="#"><i class="fa fa-clipboard"></i></a>
-          <h6 class="heading">Justo pellentesque</h6>
-          <p>Quis iaculis scelerisque diam nisl pulvinar risus at fringilla sem augue in nulla [&hellip;]</p>
-          <footer><a href="#">Read More &raquo;</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a href="#"><i class="fa fa-skyatlas"></i></a>
-          <h6 class="heading">Orci vitae vehicula</h6>
-          <p>Morbi semper metus ac pulvinar adipiscing dui justo gravida arcu et venenatis justo [&hellip;]</p>
-          <footer><a href="#">Read More &raquo;</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><a href="#"><i class="fa fa-empire"></i></a>
-          <h6 class="heading">Auctor luctus diam</h6>
-          <p>Lacus ut nisi maecenas ultrices neque a nisl nunc lorem diam rhoncus aliquet sit [&hellip;]</p>
-          <footer><a href="#">Read More &raquo;</a></footer>
-        </article>
-      </li>
-    </ul>
-    <!-- ################################################################################################ -->
-    <div class="clear"></div>
-  </section>
-</div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -208,24 +85,31 @@
     </div>
     <ul class="nospace group">
       <li class="one_half first">
-        <article class="group">
+        농가 게시판<br>
+        <br>1
+        <br>2
+        <br>3
+        <br>4
+        <br>5
+        <!-- <article class="group">
           <div class="one_half first"><a href="#"><img src="images/demo/320x240.png" alt=""></a></div>
           <div class="one_half">
             <h3 class="heading font-x1">Amet sodales tellus</h3>
             <p>Nisl sit amet mollis enim velit posuere metus nam tempus odio in erat integer ante risus tempor quis ultrices quis [&hellip;]</p>
             <footer><a href="#">Read More &raquo;</a></footer>
           </div>
-        </article>
+        </article> -->
       </li>
       <li class="one_half">
-        <article class="group">
+        봉사자 게시판
+        <!-- <article class="group">
           <div class="one_half first"><a href="#"><img src="images/demo/320x240.png" alt=""></a></div>
           <div class="one_half">
             <h3 class="heading font-x1">Fringilla non augue</h3>
             <p>Et turpis morbi mi neque facilisis sollicitudin faucibus ac primis in faucibus orci luctus et ultrices posuere cubilia [&hellip;]</p>
             <footer><a href="#">Read More &raquo;</a></footer>
           </div>
-        </article>
+        </article> -->
       </li>
     </ul>
     <!-- ################################################################################################ -->
@@ -267,8 +151,8 @@
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">Domain Name</a></p>
-    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">LIKE LION</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="https://github.com/sasgaNamabeer/honGchaton" title="Free Website Templates">OS Templates</a></p>
     <!-- ################################################################################################ -->
   </div>
 </div>
