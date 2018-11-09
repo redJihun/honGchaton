@@ -19,6 +19,7 @@ class ServesController < ApplicationController
 
   # GET /serves/1/edit
   def edit
+    authorize_action_for @serf
   end
 
   # POST /serves
@@ -40,6 +41,7 @@ class ServesController < ApplicationController
   # PATCH/PUT /serves/1
   # PATCH/PUT /serves/1.json
   def update
+    authorize_action_for @serf
     respond_to do |format|
       if @serf.update(serf_params)
         format.html { redirect_to @serf, notice: 'Serve was successfully updated.' }
@@ -54,6 +56,7 @@ class ServesController < ApplicationController
   # DELETE /serves/1
   # DELETE /serves/1.json
   def destroy
+    authorize_action_for @serf
     @serf.destroy
     respond_to do |format|
       format.html { redirect_to serves_url, notice: 'Serve was successfully destroyed.' }

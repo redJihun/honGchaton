@@ -28,5 +28,17 @@ class ApplicationAuthorizer < Authority::Authorizer
   def deletable_by?(user)
     resource.user == user
   end
+  
+  def self.default(adjective, farm)
+    false
+  end
+
+  def updatable_by?(farm)
+    resource.farm == farm
+  end
+
+  def deletable_by?(farm)
+    resource.farm == farm
+  end
 
 end
