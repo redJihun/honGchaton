@@ -14,7 +14,7 @@ class RegistrationsController < Devise::RegistrationsController
             @farm.user_id = User.last.id
             @farm.save
         end        
-        
+        sign_in(@user, bypass: true)
         redirect_to root_url
     end
 
