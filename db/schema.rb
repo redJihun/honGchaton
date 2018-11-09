@@ -13,13 +13,12 @@
 ActiveRecord::Schema.define(version: 20181109080052) do
 
   create_table "farms", force: :cascade do |t|
-    t.string   "name",       default: "", null: false
-    t.string   "farm_type",  default: "", null: false
-    t.string   "admin",      default: "", null: false
-    t.string   "location",   default: "", null: false
+    t.string   "name"
+    t.string   "farm_type"
+    t.string   "admin"
     t.integer  "user_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_farms_on_user_id"
   end
 

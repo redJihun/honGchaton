@@ -11,11 +11,76 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.label :title %> <br>
+    <%= f.text_field :title, class: "form-control", required: "required"%>
   </div>
-
+  
+  <div class="form-group">
+    <%= f.label :지역 %> <br>
+    <select class="form-control" style="display: inline; width: 200px;">
+      <option>지역 선택</option>
+      <option>서울</option>
+      <option>경기</option>
+      <option>인천</option>
+      <option>대전</option>
+      <option>대구</option>
+      <option>부산</option>
+      <option>울산</option>
+      <option>광주</option>
+      <option>강원</option>
+      <option>세종</option>
+      <option>충북</option>
+      <option>충남</option>
+      <option>경북</option>
+      <option>경남</option>
+      <option>전북</option>
+      <option>전남</option>
+      <option>제주</option>
+    </select>
+    <select class="form-control" style="display: inline; width: 200px;">
+      <option>시 · 군</option>
+      <option>목포시</option>
+      <option>여수시</option>
+      <option>순천시</option>
+      <option>광양시</option>
+      <option>담양군</option>
+      <option>곡성군</option>
+      <option>구례군</option>
+      <option>고흥군</option>
+      <option>보성군</option>
+      <option>화순군</option>
+      <option>장흥군</option>
+      <option>강진군</option>
+      <option>영암군</option>
+      <option>무안군</option>
+      <option>함평군</option>
+      <option>영광군</option>
+      <option>장성군</option>
+      <option>완도군</option>
+      <option>진도군</option>
+      <option>신안군</option>
+    </select>
+  </div> 
+  <div class="form-group">
+    <%= f.label :일정 %> <br>
+  
+  </div>
+  <div class="form-group">
+    <%= f.label :숙식제공 %> <br>
+    <label class="checkbox-inline">
+      <input type="checkbox" id="inlineCheckbox1" value="option1"> 식사 제공
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" id="inlineCheckbox2" value="option2"> 잠자리 제공
+    </label>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :연락처 %> <br>
+    <%= f.phone_field :content, placeholder: "연락 가능한 번호를 입력해주세요.", class: "form-control"%>
+  </div>
+  
   <%= tinymce :language => "en" %>
   <%= f.text_area :content, id: :post_content, class: "form-control tinymce", rows: "10" %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -24,3 +89,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+
