@@ -62,10 +62,14 @@
       <option>신안군</option>
     </select>
   </div> 
-  <div class="form-group">
-    <%= f.label :일정 %> <br>
   
+  <div>
+    <%= f.label :일정 %> <br>
+    <input type="date" id="start" name="trip-start" style="display: inline">
+     <p style="display: inline">&nbsp~&nbsp</p>
+     <input type="date" id="end" name="trip-start" style="display: inline">
   </div>
+  <br>
   <div class="form-group">
     <%= f.label :숙식제공 %> <br>
     <label class="checkbox-inline">
@@ -81,12 +85,15 @@
     <%= f.phone_field :content, placeholder: "연락 가능한 번호를 입력해주세요.", class: "form-control"%>
   </div>
   
-  <%= tinymce :language => "en" %>
-  <%= f.text_area :content, id: :post_content, class: "form-control tinymce", rows: "10" %>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-
+  <div class="form-group">
+    <%= tinymce :language => "en" %>
+    <%= f.text_area :content, id: :post_content, class: "form-control tinymce", rows: "10" %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit:글쓰기, class: "btn btn-default", style: "display: inline" %>
+    <button class="btn btn-default" style="display: inline"><%= link_to '뒤로 가기', posts_path %></button>
   </div>
 <% end %>
 
