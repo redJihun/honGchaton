@@ -10,7 +10,7 @@
     
     <div>
       <p style='text-align:right;'>
-        created by <%= current_user.name %>
+        created by <%= @post.user.name %>
         <br>
          <%= @post.created_at %>
       </p>
