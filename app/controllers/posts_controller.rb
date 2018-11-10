@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:post_id])
     @post.complete =  1 - @post.complete.to_i
     @post.save
-    redirect_to posts_url(@post_id)
+    redirect_to post_url(@post.id)
   end
 
   # POST /posts
@@ -60,7 +60,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    post.user_id = current_user.id
+    @post.user_id = current_user.id
     @post.location_one = params[:location_one]
     @post.location_two = params[:location_two]
     @post.start_date =  params[:start_date]

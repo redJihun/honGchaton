@@ -1,16 +1,26 @@
 <div class="wrapper row" style="min-height: 80vh;">
   <div class="col-md-2"></div>
   <div class="col-md-8">
-    <h2>봉사자 모집 게시판</h2>
+    <%if @post_type == 2%>
+      <h2>봉사자 모집 게시판</h2>
+    <%else%>
+      <h2>농가 찾기 게시판</h2>
+    <%end%>
     <table class="table">
       <thead>
         <tr>
           <th style = "text-align:center">지역</th>
           <th style = "text-align:center">내용</th>
           <th style = "text-align:center">일정</th>
+          <%if @post_type==1%>
           <th style = "text-align:center">숙식제공</th>
+          <%end%>
           <th style = "text-align:center">등록일</th>
+          <%if @post_type==1%>
           <th style = "text-align:center">모집</th>
+          <%else%>
+          <th style = "text-align:center">인원</th>
+          <%end%>
         </tr>
       </thead>
     
@@ -20,8 +30,11 @@
             <td style = "text-align:center"><%=post.location_one%> <%=post.location_two%></td>   
             <td class="col-md-5 col-xs-6" style = "text-align:center"><%= post.title %></td>
             <td style = "text-align:center"><%= post.start_date%> ~ <br><%= post.end_date%></td>
+            <%if @post_type==1%>
             <td style = "text-align:center"><%=post.welfare%></td>
+            <%end%>
             <td style = "text-align:center"> <%= time_ago_in_words(post.created_at) %> ago</td>
+            
             <td style = "text-align:center"><%= post.person %></td>
           </tr>
         <% end %>
@@ -29,6 +42,5 @@
     </table>
   
     <br>
-  <%= link_to '새 글쓰기', "/posts/new?post_type=#{@post_type}", class: "btn btn-default" %>
   </div>
 </div>

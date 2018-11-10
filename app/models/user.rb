@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  rolify
-  include Authority::UserAbilities
+  # rolify
+  # include Authority::UserAbilities
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,5 +8,5 @@ class User < ApplicationRecord
         # :confirmable
   has_many :posts
   has_many :serves
-  belongs_to :farm, optional: true
+  belongs_to :farm
 end

@@ -17,7 +17,12 @@
   </div>
   
   <div class="form-group">
-    <%= f.label :지역 %> <br>
+    <%if @post_type ==1%>
+      <%= f.label :지역 %>
+    <%else%>
+      <%= f.label :희망지역 %>
+    <%end%>
+    <br>
     <select name="location_one" class="form-control" id="select1" style="display: inline; width: 120px;" onchange="itemChange();">
       <option>지역 선택</option>
       <option>서울</option>
@@ -42,12 +47,13 @@
       <option>시 · 군</option>
     </select>
     
-  </div> 
-  <% if current_user.farm%>
-  <%= f.label "희망 인원" %> <br>
+  </div>
+  <%if @post_type ==1%>
+    <%= f.label "희망 인원" %>
   <%else%>
-    <%= f.label "봉사 인원" %> <br>
+    <%= f.label "가능 인원" %>
   <%end%>
+  <br>
     <%= f.number_field :person, class: "form-control", required: "required"%>
     <br>
   <div>
@@ -57,7 +63,7 @@
      <input type="date" id="end" name="end_date" style="display: inline">
   </div>
   <br>
-  <%if !(current_user.farm)%>
+  <%if @post_type ==1%>
   <div class="form-group">
     <%= f.label :숙식제공 %> <br>
     <label class="checkbox-inline">
